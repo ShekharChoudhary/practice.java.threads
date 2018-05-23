@@ -57,5 +57,7 @@ Thread t1 = new Thread(new Runnable() {
 			e.printStackTrace();
 		}
 		
+		System.out.println("Main thread ended");
+		
 	}
 }
