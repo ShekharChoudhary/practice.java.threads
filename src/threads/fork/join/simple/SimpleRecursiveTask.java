@@ -1,4 +1,4 @@
-package threads.fork.join;
+package threads.fork.join.simple;
 
 import java.util.concurrent.RecursiveTask;
 
@@ -14,7 +14,7 @@ public class SimpleRecursiveTask extends RecursiveTask<Integer>{
 	protected Integer compute() {
 	
 		if(simulatedWork >100) {
-			System.out.println("Parallel exection and split task..."+ simulatedWork);
+			System.out.println("Parallel execution and split task..."+ simulatedWork);
 			SimpleRecursiveTask task1 = new SimpleRecursiveTask(simulatedWork/2);
 			SimpleRecursiveTask task2 = new SimpleRecursiveTask(simulatedWork/2);
 			

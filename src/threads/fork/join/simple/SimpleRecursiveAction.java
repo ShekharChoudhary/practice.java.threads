@@ -1,4 +1,4 @@
-package threads.fork.join;
+package threads.fork.join.simple;
 
 import java.util.concurrent.RecursiveAction;
 
