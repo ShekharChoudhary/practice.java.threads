@@ -3,7 +3,7 @@ package threads.executor.service;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class NormalExecutorServiceTest {
+public class FixedThreadPool {
 
 	public static void main(String[] args) {
 		
@@ -14,7 +14,9 @@ public class NormalExecutorServiceTest {
 		service.execute(new NewRunnable("four",1000));
 		service.execute(new NewRunnable("five",1000));
 		service.shutdown();
+		
 	}
+	
 }
 
 class NewRunnable implements Runnable{
@@ -29,7 +31,6 @@ class NewRunnable implements Runnable{
 		try {
 			Thread.sleep(time);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		System.out.println("Thread "+name+" ends");
