@@ -7,6 +7,7 @@ import java.util.concurrent.CyclicBarrier;
  * But NormalThread completes and it does not wait for other threads.
  * So here we put the method barrier.await() in those threads which has to wait for each other
  * they are called party thread.
+ * the await() method Waits until all parties have invoked await on this barrier.
  * This can be reused once it completes.
  * @author choudshe
  *

@@ -2,9 +2,10 @@ package threads.countDownLatch;
 
 import java.util.concurrent.CountDownLatch;
 /** 
- * Here 4 waiter thread will wait until countdown thread completes.
+ * Here 4 waiter thread will wait until countdown thread completes (calls countDown() method)
  * Here we put the latch.await() method in waiter thread which we want to wait before 
  * our LatchThread completes.
+ * latch is completed by invoking the method countDown()
  * This cannot be reused once it completes.
  * @author choudshe
  *
