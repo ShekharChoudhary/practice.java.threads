@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
 
 /**
- * Semaphore is a record of the number of units of a particular resource are available. The resources wait until a unit of the
+ * Semaphore is a record of availability of number of units of a particular resource. The resources wait until a unit of the
  * resource becomes available.
  * Semaphores tracks only how many resources are free, it does not keep track of which of the resources are free.
  * Producer consumer problem can be easily implemented with the help of Semaphores.
