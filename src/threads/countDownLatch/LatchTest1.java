@@ -1,7 +1,14 @@
 package threads.countDownLatch;
 
 import java.util.concurrent.CountDownLatch;
-
+/** 
+ * Here 4 waiter thread will wait until countdown thread completes.
+ * Here we put the latch.await() method in waiter thread which we want to wait before 
+ * our LatchThread completes.
+ * This cannot be reused once it completes.
+ * @author choudshe
+ *
+ */
 public class LatchTest1 {
 
 	public static void main(String[] args) {
@@ -55,12 +62,12 @@ class LatchThreadCountdown implements Runnable {
 	}
  	public void run(){
  		System.out.println("Countdown thread started for "+ Thread.currentThread().getName());
-// 		try {
-//			Thread.sleep(1000);
-//		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+ 		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
  		System.out.println("Countdown thread ended and lock released for "+ Thread.currentThread().getName());
  		this.latch.countDown();
 	}
