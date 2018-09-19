@@ -40,14 +40,15 @@ class LockTest{
 		try {
 			System.out.println("Thread is waiting");
 			con.await();
+			System.out.println("first thread started");
+			counter();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		System.out.println("first thread started");
-		counter();
-		lock.unlock();
+		}finally {
 		
+		lock.unlock();
+		}
 	}
 	
 	public void count2() {
@@ -55,21 +56,17 @@ class LockTest{
 		try {
 			System.out.println("second thread started...");
 			Thread.sleep(5000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		con.signal();
-		System.out.println("signal sent by second thread");
-		counter();
-		try {
+			con.signal();
+			System.out.println("signal sent by second thread");
+			counter();
 			Thread.sleep(5000);
 			System.out.println("second thread unlocked");
-		} catch (InterruptedException e) {
+		}  catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}finally {
 		lock.unlock();
+		}
 	}
 	
 	public void show() {
